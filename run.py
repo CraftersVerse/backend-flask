@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify , render_template, Response
 from PIL import Image
 import io
-import os
-import datetime
-import face_recognition
-import time
+# import os
+# import datetime
+# import face_recognition
+# import time
 import math
 import cv2
 import base64
@@ -16,13 +16,13 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-from supabase_py import create_client
+# from supabase_py import create_client
 from dotenv import load_dotenv
 load_dotenv()
 
-url = os.environ.get("SUPABASE_URL")
-key = os.environ.get("SUPABASE_KEY")
-supabase = create_client(url, key)
+# url = os.environ.get("SUPABASE_URL")
+# key = os.environ.get("SUPABASE_KEY")
+# supabase = create_client(url, key)
 
 def perform_object_detection(image_array):
     model=YOLO("./book.pt")
